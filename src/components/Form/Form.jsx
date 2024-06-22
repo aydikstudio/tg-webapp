@@ -12,7 +12,7 @@ const Form = () => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
-    }, []);
+    }, [tg.MainButton]);
 
     useEffect(() => {
         if(!city || !country) {
@@ -39,9 +39,9 @@ const Form = () => {
             <h3>Your data</h3>
             <input className={'input'} type="text" placeholder={'Country'} value={country} onChange={onChangeCountry}/>
             <input className={'input'} type="text" placeholder={'City'} value={city} onChange={onChangeCity}/>
-            <select className={'select'}>
-                <option value={'physical'}>Fiz. face</option>
-                <option value={'legal'}>Y. face</option>
+            <select value={subject} onChange={onChangeSubject} className={'select'}>
+                <option value={'physical'}>Физ. лицо</option>
+                <option value={'legal'}>Юр. лицо</option>
             </select>
         </div>
     )
